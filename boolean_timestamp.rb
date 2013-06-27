@@ -1,4 +1,16 @@
 # Model must include an activated_at datetime field
+# Usage in AR Model
+#   boolean_timestamp :activate
+#
+# Gives the following instance methods:
+#   - activated
+#   - activated=
+#   - activated?
+#   - activate!
+#
+# Gives the following scope
+#   scope :activated, where("activated_at IS NOT NULL")
+
 module ActiveRecord
   module BooleanTimestamp
     extend ActiveSupport::Concern
